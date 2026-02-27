@@ -16,4 +16,13 @@ typedef struct doubleLinkedList
 }doubleLinkedList;
 
 
+#define OFFSET(structName,fieldName) \ 
+    ((unsigned int)&(((structName*)0)->fieldName))
+
+void addNode(doubleLinkedList *l,intrusiveNode *node);
+
+void iterateList(doubleLinkedList *l,void (*work)(intrusiveNode *,int));
+
+void removeNode(doubleLinkedList *l,intrusiveNode *n);
+
 #endif
